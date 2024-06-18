@@ -1,0 +1,66 @@
+* {
+    margin: 0;
+}
+
+body {
+    height: 100%;
+}
+
+h1 {
+    width: auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif;
+    color: magenta;
+    border-style: double;
+    border-color: teal;
+    border-width: 10px;
+    overflow: none;
+    background-image: url('../images/blue.jpeg');
+}
+
+h2 {
+    font-family:'Times New Roman', Times, serif;
+    color: teal;
+}
+
+.space {
+    display: flex;
+    justify-content: left;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background-color:coral;
+    padding: 20px;
+    border-style: double;
+    border-color: teal;
+    border-width: 7px;
+}
+
+.board {
+    float: right;
+    height: 100vh;
+    width: 76.5%;
+}
+
+.info {
+    height: 42vh;
+    background-image: url('../images/cork2.jpeg');
+    background-size: cover;
+    border-style: solid;
+    border-color: teal;
+    border-width: 1px;
+}
+
+.dashboard {
+    height: 66.2vh;
+    background-image: url('../images/cork.jpeg');
+    background-size: cover;
+    border-style: solid;
+    border-color: teal;
+    border-width: 1px;
+}
