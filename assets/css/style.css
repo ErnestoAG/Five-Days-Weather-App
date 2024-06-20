@@ -21,6 +21,7 @@ h1 {
 }
 
 h2 {
+    margin-left: 35px;
     font-family:'Times New Roman', Times, serif;
     color: teal;
 }
@@ -31,6 +32,9 @@ h2 {
 }
 
 .column {
+    display: grid;
+    align-content: start;
+    justify-content: center;
     float: left;
     width: 20%;
     height: 100vh;
@@ -39,6 +43,42 @@ h2 {
     border-style: double;
     border-color: teal;
     border-width: 7px;
+}
+
+#entry {
+    width: 250px;
+    height: 30px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 25px;
+    border-style: double;
+    border-color: teal;
+    border-width: 5px;
+    margin-bottom: 10%;
+}
+
+#confirm {
+    margin-left: 30px;
+    width: 200px;
+    height: 35px;
+    border-radius: 50px;
+    font-family:'Times New Roman', Times, serif;
+    color: magenta;
+    font-size: 150%;
+    font-weight: bold;
+    background-color: blue;
+    margin-bottom: 10%;
+}
+
+#confirm:hover {
+    opacity: 70%;
+}
+
+.cities {
+    margin-left: 35px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: teal;
 }
 
 .board {
@@ -54,13 +94,49 @@ h2 {
     border-style: solid;
     border-color: teal;
     border-width: 1px;
+    font-family:'Times New Roman', Times, serif;
+    color: blue;
+    font-size: 150%;
+    font-weight: bold;
+}
+
+.info ul {
+    margin-top: 2%;
+    display: grid;
+    align-content: space-between;
+}
+
+.info ul li {
+    margin-top: 2%;
 }
 
 .dashboard {
+    display: flex;
+    justify-content: space-around;
     height: 66.2vh;
     background-image: url('../images/cork.jpeg');
     background-size: cover;
     border-style: solid;
     border-color: teal;
     border-width: 1px;
+    font-family:'Times New Roman', Times, serif;
+    color: blue;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.dashboard ul {
+    margin-top: 2%;
+    padding: 2%;
+    width: 100px;
+    height: 300px;
+    display: grid;
+    align-content: normal;
+    border-style: solid;
+    border-color: teal;
+    border-width: 5px;
+}
+
+.dashboard ul li {
+   text-align: center;
 }
