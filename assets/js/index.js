@@ -1,6 +1,16 @@
 const button = document.getElementById('confirm');
 const entry = document.getElementById('entry');
-const cities = JSON.parse(localStorage.getItem('cities'));
+var cities = JSON.parse(localStorage.getItem('cities'));
+
+if (cities != null) {
+    for (i = 0; i < cities.length; i++) {
+        var render = document.getElementById('cities').appendChild(document.createElement('button'));
+        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('onclick', `{currentWeatherData('${cities[i]}'); forecastWeatherData('${cities[i]}');}`);
+        render.innerHTML = `${cities[i]}`;
+    };
+}
+
 function getInput() {
     var input = '';
     if (entry.value != '') {
@@ -50,7 +60,7 @@ async function forecastWeatherData(location) {
     let date2 = '';
     var forecast = document.querySelector('section.dashboard');
     days = forecast.querySelectorAll('ul');
-    for (i = 6; i < 35; i += 7) {
+    for (i = 7; i < 40; i += 8) {
         var li = days[y].querySelectorAll('li');
         let date = new Date(output.list[i].dt * 1000);
         date = JSON.stringify(date);
@@ -73,21 +83,21 @@ async function forecastWeatherData(location) {
 function addEntries(location) {
     if (cities != null) {
         cities.push(location);
-        for (i = 0; i < cities.length; i++) {
-            var render = document.getElementById('cities').appendChild(document.createElement('button'));
-            render.setAttribute('style', 'margin-left: 20px; width: 200px; height: 35px; border-radius: 50px; margin-top: 10%;');
-            render.setAttribute('onclick', `{currentWeatherData(${cities[i]}); forecastWeatherData(${cities[i]});}`);
-            render.innerHTML(`${cities[0]}`);
-        };
-    } else {
-        var cities = [];
-        cities.push(location);
         var render = document.getElementById('cities').appendChild(document.createElement('button'));
-        render.setAttribute('style', 'margin-left: 20px; width: 200px; height: 35px; border-radius: 50px; margin-top: 10%;');
-        render.setAttribute('onclick', `{currentWeatherData(${cities[0]}); forecastWeatherData(${cities[0]});}`);
-        render.innerHTML(`${cities[0]}`);
+        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('onclick', `{currentWeatherData('${cities[cities.length - 1]}'); forecastWeatherData('${cities[cities.length - 1]}');}`);
+        render.innerHTML = `${cities[cities.length - 1]}`;
+        localStorage.setItem('cities', JSON.stringify(cities));
+    } else {
+        var array = [];
+        array.push(location);
+        var render = document.getElementById('cities').appendChild(document.createElement('button'));
+        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('onclick', `{currentWeatherData('${array[0]}'); forecastWeatherData('${array[0]}');}`);
+        render.innerHTML = `${array[0]}`;
+        localStorage.setItem('cities', JSON.stringify(array));
     };
-    localStorage.setItem('cities', JSON.stringify(cities));
+    cities = JSON.parse(localStorage.getItem('cities'));
 };
 
 button.addEventListener('click', function (event) {
