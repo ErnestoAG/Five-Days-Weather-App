@@ -1,11 +1,12 @@
 const button = document.getElementById('confirm');
 const entry = document.getElementById('entry');
 var cities = JSON.parse(localStorage.getItem('cities'));
+var style = `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`;
 
 if (cities != null) {
     for (i = 0; i < cities.length; i++) {
         var render = document.getElementById('cities').appendChild(document.createElement('button'));
-        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('style', style);
         render.setAttribute('onclick', `{currentWeatherData('${cities[i]}'); forecastWeatherData('${cities[i]}');}`);
         render.innerHTML = `${cities[i]}`;
     };
@@ -84,7 +85,7 @@ function addEntries(location) {
     if (cities != null) {
         cities.push(location);
         var render = document.getElementById('cities').appendChild(document.createElement('button'));
-        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('style', style);
         render.setAttribute('onclick', `{currentWeatherData('${cities[cities.length - 1]}'); forecastWeatherData('${cities[cities.length - 1]}');}`);
         render.innerHTML = `${cities[cities.length - 1]}`;
         localStorage.setItem('cities', JSON.stringify(cities));
@@ -92,7 +93,7 @@ function addEntries(location) {
         var array = [];
         array.push(location);
         var render = document.getElementById('cities').appendChild(document.createElement('button'));
-        render.setAttribute('style', `width: 200px; height: 35px; border-radius: 50px; margin-top: 10%; font-family:'Times New Roman', Times, serif; color: teal; background-color: silver; font-size: 80%; font-weight: bold;`);
+        render.setAttribute('style', style);
         render.setAttribute('onclick', `{currentWeatherData('${array[0]}'); forecastWeatherData('${array[0]}');}`);
         render.innerHTML = `${array[0]}`;
         localStorage.setItem('cities', JSON.stringify(array));

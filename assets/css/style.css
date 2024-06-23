@@ -1,7 +1,7 @@
 * {
     margin: 0;
-    min-height: auto;
-    min-width: auto;
+    height: auto;
+    width: auto;
 }
 
 h1 {
@@ -27,14 +27,13 @@ h2 {
 .space {
     display: flex;
     justify-content: left;
+    background-color: sandybrown;
 }
 
 .column {
     align-content: start;
     justify-content: center;
-    float: left;
     width: 20%;
-    height: 100vh;
     background-color:coral;
     padding: 20px;
     border-style: double;
@@ -79,21 +78,20 @@ h2 {
 }
 
 .board {
-    float: right;
-    height: 100vh;
     width: 76.5%;
 }
 
 .info {
-    height: 42vh;
     background-image: url('../images/cork2.jpeg');
     background-size: cover;
+    padding: 2%;
     border-style: solid;
     border-color: teal;
     border-width: 1px;
     font-family:'Times New Roman', Times, serif;
     font-size: 150%;
     font-weight: bold;
+
 }
 
 .header {
@@ -104,7 +102,6 @@ h2 {
 
 .info ul {
     color: darkblue;
-    margin-top: 2%;
     display: grid;
     align-content: space-between;
 }
@@ -116,7 +113,7 @@ h2 {
 .dashboard {
     display: flex;
     justify-content: space-around;
-    height: 66.2vh;
+    padding: 2%;
     background-image: url('../images/cork.jpeg');
     background-size: cover;
     border-style: solid;
@@ -133,7 +130,6 @@ h2 {
     margin-top: 2%;
     padding: 2%;
     width: 100px;
-    height: 300px;
     display: grid;
     align-content: normal;
     border-style: solid;
@@ -143,4 +139,5 @@ h2 {
 
 .dashboard ul li {
    text-align: center;
+   margin-top: 30%;
 }
