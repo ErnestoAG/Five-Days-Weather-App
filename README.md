@@ -13,7 +13,7 @@ Five Weeks Weather App is complete according to the following criteria:
 
 NOTE: Any problems caused by the weather API are likely due to server-side adjustments. If service is suspended or restructured, this website cannot function properly. 
 
-Here is the link to the web page: 
+Here is the link to the web page: https://ernestoag.github.io/Five-Days-Weather-App/
  
 ## Installation
 
